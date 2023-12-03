@@ -21,7 +21,8 @@ pipeline{
     stage("deploy"){
       steps{
         echo "using docker compose create container and run your application"
-        sh "docker-compose down && docker-compose up -d"
+        sh "docker-compose down"
+        sh "docker-compose up -d"
       }
     }
   }
