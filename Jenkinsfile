@@ -17,7 +17,7 @@ pipeline{
       steps{
        withCredentials([usernamePassword(credentialsId: 'dockerHub', usernameVariable: 'dockerHubUser', passwordVariable: 'dockerHubPass')]) {
         sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
-        sh "docker tag django-app-new1:latest django-app-new1:latest"
+        sh "docker tag django-app-new1:latest ${env.dockerHubUser}/django-app-new1:latest"
         sh "docker push ${env.dockerHubUser}/django-app-new1:latest"
         sh "echo push the image in docker hub"
         }  
