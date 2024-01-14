@@ -10,7 +10,7 @@ pipeline{
     stage("build & test"){
       steps{
         echo "build the docker image using docker file"
-        sh "docker build -t django-app:latest ."
+        sh "docker build -t django-app-new1:latest ."
       }
     }
     stage("push"){
